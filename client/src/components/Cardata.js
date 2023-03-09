@@ -3,13 +3,16 @@ import Card from './Card';
 import { useEffect,useState } from 'react';
 import './card.css'
 function Cardata(){
+    const [status,setStatus] = useState();
     const [message,setMessage] = useState();
     useEffect(()=>{
         fetch("http://localhost:3001/mkc")
         .then((res)=>res.json())
-        .then((data)=>setMessage(data));
+        .then((data)=>{
+            setMessage(data);
+            setStatus(true);
+        });
     });
-    console.log(message);
     // const arr = [
     //     {
     //         title: 'One Punch Man',
@@ -42,14 +45,14 @@ function Cardata(){
     //         src: 'https://assets.stickpng.com/images/5ede49b5b760540004f2c5e5.png',
     //     },
     // ];
-    const arr = message;
-
     return(
         <>
              <div className="flex justify-evenly flex-wrap my-16 mx-4 ">
-            {arr.map((data)=>{
-                return (<Card title={data.title} desc = {data.desc} src = {data.src} />)
-            })}
+            {
+                status?message.map((data)=>{
+                    return (<Card title={data.title} desc = {data.desc} src = {data.src} />)
+                }):null
+            }
             </div>
             
         </>

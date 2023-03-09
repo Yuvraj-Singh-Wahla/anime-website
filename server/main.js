@@ -27,16 +27,16 @@ async function main() {
         ]
     });
 
-    const card = new mongoose.model("card", cardSchema);
+    const temp = new mongoose.model("temp", cardSchema);
 
-    const opm = new card({
-        title: "One Punch Man",
+    const opm = new temp({
+        title: "Naruto",
         desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-        src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png",
+        src: "https://www.pngmart.com/files/6/Attack-On-Titan-PNG-File-1.png",
         page: {
-            title: "One Punch Man",
+            title: "Naruto",
             desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-            src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png"
+            src: "https://www.pngmart.com/files/6/Attack-On-Titan-PNG-File-1.png"
         },
         cards: [
             {
@@ -71,8 +71,9 @@ async function main() {
             }
         ]
     });
-    await opm.save();
-    data = await card.find();
+    // await opm.save();
+    data = await temp.find();
+    console.log(data);
 
 }
 
