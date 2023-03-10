@@ -73,7 +73,7 @@ async function main() {
     });
     // await opm.save();
     data = await temp.find();
-    console.log(data);
+    // console.log(data);
 
 }
 
@@ -83,6 +83,10 @@ app.use(cors());
 app.get('/mkc', (req, res) => {
     res.json(data);
 });
+
+app.get('/app2', (req, res) => {
+    res.json(data[0].cards)
+})
 
 app.listen(3001, (err) => {
     console.log(err);
