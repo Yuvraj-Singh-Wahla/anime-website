@@ -47,4 +47,4 @@ const Content=()=>{
     }
 }
 
-export default Content
+export default Content;

@@ -54,7 +54,7 @@ const Content_2 = () => {
       <div className='flex flex-wrap  space-x-20 justify-evenly'>
         {
             status?arr.map((data)=>{
-                return <Content2 heading={data.heading} desc = {data.desc} src = {data.src} />
+                return <Content2 heading={data.title} desc = {data.desc} src = {data.src} />
             }):null
         }
         </div>

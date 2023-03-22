@@ -1,21 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { BrowserRouter as Router, Switch , Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route,Link, Routes, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
 import App2 from './App2';
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <>
+        <App />
+      </>
+    ),
+  },
+  {
+    path: '/app2',
+    element: (
+      <>
+        <App2 />
+      </>
+    ),
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
+    {/* <Router>
       <Routes>
-      <Route path='/' element={<App/>}/>
-      <Route path='/app2' element={<App2/>}/>
-   </Routes>
-    </Router>
+        <Route path='/' element={<App />} />
+        <Route path='/app2' element={<App2 />} />
+      </Routes>
+    </Router> */}
+    <RouterProvider router = {router} />
 
   </React.StrictMode>
 );
