@@ -29,58 +29,15 @@ async function main() {
 
     const temp = new mongoose.model("temp", cardSchema);
 
-    const opm = new temp({
-        title: "Naruto",
-        desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-        src: "https://www.pngmart.com/files/6/Attack-On-Titan-PNG-File-1.png",
-        page: {
-            title: "Naruto",
-            desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-            src: "https://www.pngmart.com/files/6/Attack-On-Titan-PNG-File-1.png"
-        },
-        cards: [
-            {
-                title: "One Punch Man",
-                desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-                src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png"
-            },
-            {
-                title: "One Punch Man",
-                desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-                src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png"
-            },
-            {
-                title: "One Punch Man",
-                desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-                src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png"
-            },
-            {
-                title: "One Punch Man",
-                desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-                src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png"
-            },
-            {
-                title: "One Punch Man",
-                desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-                src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png"
-            },
-            {
-                title: "One Punch Man",
-                desc: "Quis ut id culpa sit sit officia consectetur et id eiusmod.",
-                src: "https://www.pngmart.com/files/13/One-Punch-Man-Saitama-PNG-Photos.png"
-            }
-        ]
-    });
-    // await opm.save();
+    
     data = await temp.find();
-    // console.log(data);
 
 }
 
 const app = express();
 app.use(cors());
 
-app.get('/mkc', (req, res) => {
+app.get('/home', (req, res) => {
     res.json(data);
 });
 

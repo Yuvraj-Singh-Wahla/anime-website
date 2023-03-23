@@ -16,7 +16,6 @@ const Content_2 = () => {
             setStatus(true);
         });
     });
-
     // const arr = [
     //     {
     //         heading:'Naruto',
